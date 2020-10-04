@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+      
+    // Your JavaScript goes here!
+    function computerPlay(){
+        let randomRoll = Math.floor(Math.random() * 3) + 1;
+        if(randomRoll === 1){
+            return "Rock";
+        }
+        else if(randomRoll === 2){
+            return "Paper";
+        }
+        else if(randomRoll === 3){
+            return "Scissors"
+        }
+    }
+    function singleRound(playerSelection, computerSelection){
+       // playerSelection = alert("Your selection: " + selection);
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
+        if(playerSelection === "rock"){
+            if(computerSelection === "paper"){
+                return "You Lose! Paper Beats Rock";
+            }
+            else if(computerSelection === "rock"){
+                return "Tie!";
+            }
+            else{
+            return "You Win! Rock Beats Scissors!";
+        }
+        }
+        else if(playerSelection === "paper"){
+            if(computerSelection === "rock"){
+                return "You Win! Paper Beats Rock";
+            }
+            else if(computerSelection === "paper"){
+                return "Tie!";
+            }
+        else{
+            return "You Lose! Scissors Beat Paper!";
+        }
+        }
+        else if(playerSelection === "scissors"){
+            if(computerSelection === "rock"){
+                return "You Lose! Rock Beats Scissors";
+            }
+            else if(computerSelection === "paper"){
+                return "You Win! Scissors Beat Paper";
+            }
+        else{
+            return "Tie!";
+        }
+        }
+
+
+        }
+    /*function game(){
+        let scorePlayer = 0;
+        let scoreComp = 0;
+        let tieCounter = 0;
+        let playerIn;
+        while(scorePlayer < 5 && scoreComp < 5){
+            playerIn = window.prompt("Enter your choice: ");
+        if(singleRound(playerIn, computerPlay()) === "You Win! Paper Beats Rock" || singleRound(playerIn, computerPlay()) === "You Win! Rock Beats Scissors!" || singleRound(playerIn, computerPlay()) === "You Win! Scissors beat Paper"){
+            scorePlayer += 1;
+            console.log("Player Score: " + scorePlayer);
+            console.log("Computer Score: " + scoreComp);
+            console.log("Tie Counter: " + tieCounter);
+        }
+        else if(singleRound(playerIn, computerPlay()) === "You Lose! Paper Beats Rock" || singleRound(playerIn, computerPlay()) === "You Lose! Rock Beats Scissors" || singleRound(playerIn, computerPlay()) === "You Lose! Scissors Beat Rock!"){
+            scoreComp += 1;
+            console.log("Player Score: " + scorePlayer);
+            console.log("Computer Score: " + scoreComp);
+            console.log("Tie Counter: " + tieCounter);
+        }
+        else{
+            tieCounter += 1;
+            console.log("Tie Counter: " + tieCounter);
+        }
+        if(scorePlayer === 5){
+            console.log("Player Score: " + scorePlayer);
+            console.log("Computer Score: " + scoreComp);
+            console.log("You Win The Game!");
+            break;
+        }
+        if(scoreComp === 5){
+            console.log("Player Score: " + scorePlayer);
+            console.log("Computer Score: " + scoreComp);
+            console.log("Sorry! You Lose!");
+            break;
+        }
+        
+        }
+    }*/
+  </script>
+</body>
+</html>
