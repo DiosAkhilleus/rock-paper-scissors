@@ -6,7 +6,6 @@
 </head>
 <body>
   <script>
-      
     // Your JavaScript goes here!
     function computerPlay(){
         let randomRoll = Math.floor(Math.random() * 3) + 1;
@@ -26,70 +25,73 @@
         computerSelection = computerSelection.toLowerCase();
         if(playerSelection === "rock"){
             if(computerSelection === "paper"){
-                return "You Lose! Paper Beats Rock";
+                return "Loss";
             }
             else if(computerSelection === "rock"){
-                return "Tie!";
+                return "Tie";
             }
             else{
-            return "You Win! Rock Beats Scissors!";
+            return "Win";
         }
         }
         else if(playerSelection === "paper"){
             if(computerSelection === "rock"){
-                return "You Win! Paper Beats Rock";
+                return "Win";
             }
             else if(computerSelection === "paper"){
-                return "Tie!";
+                return "Tie";
             }
-        else{
-            return "You Lose! Scissors Beat Paper!";
+            else{
+            return "Loss";
         }
         }
         else if(playerSelection === "scissors"){
             if(computerSelection === "rock"){
-                return "You Lose! Rock Beats Scissors";
+                return "Loss";
             }
             else if(computerSelection === "paper"){
-                return "You Win! Scissors Beat Paper";
+                return "Win";
             }
         else{
-            return "Tie!";
+            return "Tie";
         }
         }
 
 
         }
-    /*function game(){
+    function game(){
         let scorePlayer = 0;
         let scoreComp = 0;
         let tieCounter = 0;
         let playerIn;
-        while(scorePlayer < 5 && scoreComp < 5){
+        while(scorePlayer < 3 && scoreComp < 3){
             playerIn = window.prompt("Enter your choice: ");
-        if(singleRound(playerIn, computerPlay()) === "You Win! Paper Beats Rock" || singleRound(playerIn, computerPlay()) === "You Win! Rock Beats Scissors!" || singleRound(playerIn, computerPlay()) === "You Win! Scissors beat Paper"){
+        if(singleRound(playerIn, computerPlay()) === "Win"){
             scorePlayer += 1;
             console.log("Player Score: " + scorePlayer);
             console.log("Computer Score: " + scoreComp);
             console.log("Tie Counter: " + tieCounter);
+            console.log("You won that round!");
         }
-        else if(singleRound(playerIn, computerPlay()) === "You Lose! Paper Beats Rock" || singleRound(playerIn, computerPlay()) === "You Lose! Rock Beats Scissors" || singleRound(playerIn, computerPlay()) === "You Lose! Scissors Beat Rock!"){
+        else if(singleRound(playerIn, computerPlay()) === "Loss"){
             scoreComp += 1;
             console.log("Player Score: " + scorePlayer);
             console.log("Computer Score: " + scoreComp);
             console.log("Tie Counter: " + tieCounter);
+            console.log("You lost that round!");
         }
         else{
             tieCounter += 1;
             console.log("Tie Counter: " + tieCounter);
+            console.log("That round was a tie!");
         }
-        if(scorePlayer === 5){
+        if(scorePlayer === 3){
             console.log("Player Score: " + scorePlayer);
             console.log("Computer Score: " + scoreComp);
             console.log("You Win The Game!");
             break;
         }
-        if(scoreComp === 5){
+        if(scoreComp === 3){
             console.log("Player Score: " + scorePlayer);
             console.log("Computer Score: " + scoreComp);
             console.log("Sorry! You Lose!");
@@ -97,7 +99,7 @@
         }
         
         }
-    }*/
+    }
   </script>
 </body>
 </html>
